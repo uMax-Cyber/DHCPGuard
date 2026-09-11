@@ -12,29 +12,29 @@
 
 ![Demo](screenshots/demo.svg)
 
-Sophos Firewall da DHCP ni boshqarish va tashxislash uchun Python vositasi — XML API orqali ishlaydi. Scope larni aniqlash, ijaralarni (lease) tahlil qilish, konfliktlarni aniqlash hamda jimgina DHCP ishdan chiqishiga olib keladigan «notoʻgʻri scopedagi statik ijarа» shakllanishini aniqlashni oʻz ichiga oladi.
+Sophos Firewall dagi DHCP ni XML API orqali boshqarish va tashxislash uchun Python vositasi: scope larni aniqlash, lease tahlili, konfliktlarni aniqlash va — eng muhimi — DHCP ni jimgina ishdan chiqaradigan «statik lease notoʻgʻri scope da» muammosini aniqlash.
 
-## Asosiy kashfiyot: jimgina DHCP rad etilishi
+## Asosiy topilma: DHCP ning jimgina rad etilishi
 
-`ConflictDetection=Enable` bilan ishlaydigan Sophos, boshqa scope konfiguratsiyasida statik ijarasi bor qurilmaning DHCP DISCOVER soʻrovini **jimgina e'tiborsiz qoldiradi**. NAK yoʻq, xato yoʻq — faqat jimlik. Qurilmalar soatlab aylanaveradi.
+`ConflictDetection=Enable` boʻlgan Sophos, boshqa scope konfiguratsiyasida statik lease i bor qurilmaning DHCP DISCOVER soʻroviga javob bermaydi. Na NAK, na xato — shunchaki jimlik. Qurilma soatlab urinaveradi.
 
-**Aniqlash usuli**: barcha scope lardagi statik ijaralarni solishtiring. Agar MAC manzilning scope-A dagi statik rezervatsiyasi boʻlsa, lekin DISCOVER scope-B interfeysiga kelsa — server javob bermaydi.
+**Qanday aniqlanadi:** barcha scope lardagi statik lease larni solishtiring. Agar MAC scope-A da statik rezervatsiyaga ega boʻlsa-yu, DISCOVER scope-B interfeysiga kelsa — server javob bermaydi.
 
 ## Skriptlar
 
 | Skript | Vazifasi |
 |--------|----------|
-| `scripts/sophos_api.py` | Universal XML API oʻrami (Get/Set/Filter) |
-| `scripts/dhcp_scope_audit.py` | Barcha scope larni chiqarish: poolar, statiklar, band qilinganlik |
-| `scripts/lease_analyzer.py` | Syslog dan lease hodisalarini ajratib olish, anomaliyalarni aniqlash |
+| `scripts/sophos_api.py` | XML API bilan ishlash uchun universal yordamchi (Get/Set/Filter) |
+| `scripts/dhcp_scope_audit.py` | Barcha scope larni toʻliq chiqarib berish: poolar, statiklar, band qilinganlik |
+| `scripts/lease_analyzer.py` | Syslog dan lease hodisalarini ajratib olib, anomalikalarni aniqlash |
 
-## API ning nozik joylari (real joylashtirishdan)
+## API ning nozik joylari (real joylashtirishdan olingan)
 
-- Haqiqiy Get modullari: `DHCP`, `DHCPServer`, `Interface`, `IPHost`, `FirewallRule`, `DHCPRelay`
-- **Haqiqiy EMAS** (529 xatosi): `Syslog`, `LogSettings`, `SystemSettings`, `VPNSSL`, `Route` — bularni qayta soʻramang
-- `DHCPServer` barcha scope larni poolar, statiklar, DNS, gateway va ijarа muddatlari bilan qaytaradi
-- `Interface` barcha VLAN gateway IP larini qaytaradi — scope ↔ VLAN moslash uchun ishlating
-- REST API v2 (`/console/api/v2/`) SFOS ning yangi versiyalarida ham oʻchirilgan boʻlishi mumkin
+- Ishlaydigan Get modullari: `DHCP`, `DHCPServer`, `Interface`, `IPHost`, `FirewallRule`, `DHCPRelay`
+- Ishlamaydiganlari (529 xatosi qaytaradi): `Syslog`, `LogSettings`, `SystemSettings`, `VPNSSL`, `Route` — bularni qayta soʻrashning foydasi yoʻq
+- `DHCPServer` barcha scope larni poolari, statiklari, DNS, gateway va lease muddatlari bilan birga qaytaradi
+- `Interface` barcha VLAN gateway IP larini beradi — scope va VLAN ni moslashtirishda ishlatiladi
+- REST API v2 (`/console/api/v2/`) SFOS ning yangi versiyalarida ham oʻchirilgan holda kelishi mumkin
 
 ## Litsenziya
 MIT
