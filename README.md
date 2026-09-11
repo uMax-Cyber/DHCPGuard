@@ -1,4 +1,5 @@
 # Sophos DHCP Toolkit
+[![CI](https://github.com/uMax-Cyber/DHCPGuard/actions/workflows/ci.yml/badge.svg)](https://github.com/uMax-Cyber/DHCPGuard/actions/workflows/ci.yml)
 
 Python toolkit for managing and diagnosing DHCP on Sophos Firewall via XML API. Includes scope discovery, lease analysis, conflict detection, and the critical "static lease in wrong scope" pattern that causes silent DHCP failures.
 
