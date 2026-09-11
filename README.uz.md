@@ -12,5 +12,14 @@ Sophos XML API orqali DHCP boshqaruvi: scope audit, «jim rad etish» pattern, l
 
 ![Namoyish](screenshots/demo.svg)
 
-## Litsenziya
-MIT
+## 📬 Aloqa
+
+Savollar bormi? Yozing: **[allumaxmail@gmail.com](mailto:allumaxmail@gmail.com)**
+
+---
+
+<div align="center">
+
+**🇬🇧 [English](README.md) · 🇷🇺 [Русский](README.ru.md) · 🇺🇿 [Oʻzbekcha](README.uz.md)**
+
+</div>

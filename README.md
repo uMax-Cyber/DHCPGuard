@@ -35,3 +35,15 @@ Sophos with `ConflictDetection=Enable` **silently ignores** DHCP DISCOVER from a
 
 ## License
 MIT
+
+## 📬 Contact
+
+Questions? Reach out: **[allumaxmail@gmail.com](mailto:allumaxmail@gmail.com)**
+
+---
+
+<div align="center">
+
+**🇬🇧 [English](README.md) · 🇷🇺 [Русский](README.ru.md) · 🇺🇿 [Oʻzbekcha](README.uz.md)**
+
+</div>
